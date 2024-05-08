@@ -42,4 +42,7 @@ public class FlightService {
         }
         return sb.toString();
     }
+    public List<Flight> getCustomQueryFlights(FlightStatus p1, FlightStatus p2) {
+        return flightRepository.findByStatusIn(List.of(p1, p2));
+    }
 }
